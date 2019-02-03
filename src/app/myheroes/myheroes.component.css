@@ -1,0 +1,12 @@
+.btn {
+    margin-top: 20px;
+    font-family: Arial;
+    background-color: #eee;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    color: #888;
+    text-decoration: none;
+}
