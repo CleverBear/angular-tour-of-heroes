@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+ 
 
 @Component({
   selector: 'app-dashboard',
@@ -10,6 +11,13 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
+  clicklog:String[] = [];
+  @Input()  hero: object;
+ 
+  onVoted(agreed: number) {
+    this.clicklog.push("Dashboard Log: " + agreed);
+  }
+
 
   constructor(private heroService: HeroService, private spinner: NgxSpinnerService) { }
 

@@ -10,16 +10,10 @@
   </button>
 </div>
 
-<ul class="heroes">
-  <li *ngFor="let hero of heroes">
-    <a routerLink="/detail/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span> {{hero.name}}
-    </a>
-    <button class="delete" title="delete hero"
-      (click)="delete(hero)">x</button>
-  </li>
-</ul>
-<ngx-spinner></ngx-spinner>
+<app-child-top-hero *ngFor="let hero of heroes" [hero]="hero" (voted)="onVoted($event)"></app-child-top-hero>
+
+<p *ngFor="let log of clicklog">{{log}}</p>
+<!-- <ngx-spinner></ngx-spinner> -->
 
 
 <!-- 

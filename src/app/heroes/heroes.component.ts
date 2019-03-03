@@ -1,8 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+
+class ReturnValue {
+  id: number;
+  clicked: boolean;
+}
 
 @Component({
   selector: 'app-heroes',
@@ -10,8 +15,20 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-  heroes: Hero[];
-
+  heroes: Hero[] = [];
+  clicklog:String[] = [];
+  @Input()  hero: object;
+ 
+  onVoted(agreed: ReturnValue) {
+    var keys = Object.keys(this.heroes);
+    for (var i = keys.length - 1; i >= 0; i--) {
+      if (agreed.id == this.heroes[i].id) {
+        this.heroes[i].clicked = agreed.clicked;
+        break;
+      }
+    }
+    this.clicklog.push("Heroes Log: " + agreed.id);
+  }
   constructor(private heroService: HeroService, private spinner: NgxSpinnerService) { }
 
   ngOnInit() {

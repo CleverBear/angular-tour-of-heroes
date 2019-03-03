@@ -15,6 +15,8 @@ import { HeroesComponent }      from './heroes/heroes.component';
 import { HeroSearchComponent }  from './hero-search/hero-search.component';
 import { MessagesComponent }    from './messages/messages.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { HeroComponent } from './hero/hero.component';
+import { ChildTopHeroComponent } from './child-top-hero/child-top-hero.component';
 
 @NgModule({
   imports: [
@@ -37,7 +39,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    HeroComponent,
+    ChildTopHeroComponent
   ],
   bootstrap: [ AppComponent ]
 })
