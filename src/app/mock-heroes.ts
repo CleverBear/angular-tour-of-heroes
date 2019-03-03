@@ -11,7 +11,6 @@ export const HEROES: Hero[] = [
   { id: 18, name: 'Dr IQ', clicked: false },
   { id: 19, name: 'Magma', clicked: false },
   { id: 20, name: 'Tornado', clicked: false }
-];
 
 
 /*

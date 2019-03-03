@@ -9,6 +9,10 @@ class ReturnValue {
   clicked: boolean;
 }
 
+import { Hero } from '../hero';
+import { HeroService } from '../hero.service';
+import { NgxSpinnerService } from 'ngx-spinner';
+
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
